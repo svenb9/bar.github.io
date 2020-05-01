@@ -1,0 +1,42 @@
+@mixin f-j-c()
+    display: flex
+    justify-content: center
+@mixin f-top-center()
+    display: flex
+    justify-content: center
+        
+@mixin f-center()
+    display: flex
+    margin: auto
+    justify-content: center
+    align-items: center
+@mixin f-column()
+    display: flex
+    flex-flow: column 
+@mixin flex-row()
+    display: flex
+    flex-flow: row wrap
+@mixin container($width: 1200)
+        width: 100%
+        margin: 0
+        padding: 0 -10px
+        max-width: $width + px
+        margin: 0 auto
+
+$mediaBp: ( 992px,768px,576px, 480px)
+%contant
+    content: ''
+    left: 0
+    right: 0
+    position: absolute
+
+.btn
+    width: 245px
+    height: 50px
+    line-height: 50px
+    background: #000
+    color: #fff
+    transition: .2s
+    &:hover
+        background: lighten(#000, 25% )
+        transition: all .2s

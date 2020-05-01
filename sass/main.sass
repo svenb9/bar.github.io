@@ -1,0 +1,145 @@
+@import _reset.sass
+@import _default.sass
+
+@import _media.sass
+html
+    font-size: 14px
+    overflow-y: hidden
+img
+    max-width: 100%
+    height: auto
+.f-column
+    @include f-column()
+.preview
+    width: 100%
+    height: 37px
+    background: url(/img/bg.jpg) center/cover no-repeat
+    position: relative
+    &::before
+        @extend %contant
+        width: 2px
+        background-color: #fff
+        height: 40vh
+        margin: 0 auto
+        bottom: 0
+.logos
+    display: flex
+    flex-direction: column
+    color: #ffffff
+    align-items: center
+    text-transform: uppercase
+    padding: 5vh 0
+    
+    h1
+        font-size: 3.2em
+        font-weight: normal
+        position: relative
+        padding: 20px 0
+        &::after,&::before
+            @extend %contant
+            width: 150%
+            height: 2px
+            left: -25%
+            background-color: #fff
+        &::before
+            top: 0
+        &::after
+            bottom: 0            
+    span
+        font-size: 1.4em
+        padding: 30px 0
+
+.tab
+    position: relative
+    &-flex
+        display: flex
+        flex-flow: row wrap
+        justify-content: space-between
+        width: 100%
+    input[type=radio]
+        display: none
+    & .tab-title
+        width: 100%
+        border-top: 1px solid
+        padding: 5px 0
+        text-align: center
+        text-transform: uppercase
+        letter-spacing: 5px
+        display: inline-block
+        font-size: 20px
+    & .tab-content
+        height: 0
+        visibility: hidden
+        opacity: 0
+        transition: all .2s linear
+    & :checked
+        & ~ .tab-content
+            height: 70vh
+            visibility: visible
+            opacity: 1
+    & .preview
+        height: 37px
+
+    text-align: center
+    h2
+        font-size: 34px
+        font-weight: normal
+        text-transform: uppercase
+        padding:  50px 0 
+        position: relative
+    & .line::before
+        @extend %contant
+        bottom: -3vh
+        height: 7vh
+        width: 2px
+        background: #000
+        margin: 0 auto
+    &-event
+        &_left,&_right,&_center
+            width: calc(100%/3)
+            position: relative
+        &_center
+            max-width: 500px
+            padding: 0 45px 
+        &_center
+            border:
+                left: 1px solid grey
+                right: 1px solid grey
+            p
+                font-size: 16px
+                padding: 40px 0 100px 0
+        &_left
+            img
+                position: absolute
+                &:nth-child(1)
+                    left: -15%
+                &:nth-child(2)
+                    left: 15%
+                    top: 10%
+                &:nth-child(3)
+                    left: 40%
+        &_right
+            img
+                position: absolute
+                &:nth-child(1)
+                    right: 25%
+                &:nth-child(2)
+                    right: -25%
+                    top: 10%
+        &_tel
+            border: 1px solid black
+            display: inline-block
+            padding: 16.5px 0
+            width: 100%
+            text-align: center
+        
+        h2
+            font-size: 34px
+            font-weight: normal
+            text-transform: uppercase
+            line-height: 1.4
+            padding-bottom: 100px
+
+    
+    
+.menu_title
